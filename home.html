@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Barber Shop | Home</title>
+<link rel="icon" href="istockphoto-1030255416-612x612.jpg">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: aquamarine;
+    color: black;
+}
+header {
+    background: brown;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: gold;
+    margin: 0 15px;
+    text-decoration: none;
+}
+.hero {
+    text-align: center;
+    padding: 40px;
+}
+.hero video {
+    width: 70%;
+    border-radius: 10px;
+}
+button {
+    padding: 10px 20px;
+    background: gold;
+    border: none;
+    cursor: pointer;
+}
+footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>💈 Classic Barber Shop</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<p>welcome to our classic barber style for cutting hair for cutting beard we are always working for people the owner of this barber is <span style="color: red; font: bold;">Abdiqafaar Aweis Ali C1240267</span>  thanks. </p>
+
+<section class="hero">
+    <h2>Best Haircuts & Grooming</h2>
+
+    <!-- Replace video.mp4 with your own -->
+    <video controls width="200" height="500">
+        <source src="WhatsApp Video 2026-02-07 at 10.15.32 AM.mp4" type="video/mp4">
+    </video>
+
+    <br><br>
+    <button onclick="welcome()">Click here</button>
+    <p id="msg"></p>
+   
+</section>
+<footer>
+    &copy; 2026 Classic Barber Shop. All rights reserved.
+  </footer>
+<script>
+function welcome() {
+    document.getElementById("msg").innerText =
+        "Welcome to our barber shop! Book your style today.";
+       
+}
+
+function welcome() {
+
+    let msg = document.getElementById("msg");
+    let now = new Date();
+    let hour = now.getHours();
+    let greeting = "";
+
+    if(hour < 12){
+        greeting = "Good Morning";
+    }else if(hour < 18){
+        greeting = "Good Afternoon";
+    }else{
+        greeting = "Good Evening";
+    }
+
+    msg.innerText = greeting + 
+    " 👋 Welcome to Classic Barber Shop! Book your style today.";
+
+    msg.style.color = "brown";
+    msg.style.fontWeight = "bold";
+    msg.style.fontSize = "18px";
+}
+
+
+</script>
+
+</body>
+</html>

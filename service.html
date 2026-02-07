@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="istockphoto-1030255416-612x612.jpg">
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: aquamarine;
+    color: black;
+}
+header {
+    background: brown;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: gold;
+    margin: 0 15px;
+    text-decoration: none;
+} 
+section{
+  margin-bottom: 60px;
+}
+.card{
+border: 1px solid bisque;
+border-radius: 10px;
+width: 300px;
+text-align: center;
+padding: 40px;
+background-color: whitesmoke;
+margin-top: 5px;
+}
+.card img{
+  width: 100px;
+  height: 100px;
+  border-radius: 40%;
+  margin-bottom: 15px;
+  margin: auto;
+}
+.links a{
+display: block;
+margin: 5px 0;
+text-decoration: none;
+background-color: bisque;
+padding: 8px;
+border-radius: 5px;
+color: #000;
+  
+}
+.card-container-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  
+}
+ .description {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 15px;
+}
+.stmnt{
+  color: black;
+  font-style: italic;
+  font-family: sans-serif;
+}
+.money{
+  color: red;
+}
+ footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+    <h1>💈 Classic Barber Shop</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+<h1 style="text-align: center; color: rgb(0, 0, 0);">welcome to our services</h1>
+<br>
+<br>
+
+<h2 style="text-align: center;">hair cut info</h2>
+  
+  <section>
+    <div class="card-container-row">
+      <!--Card1-->
+      <div class="card">
+        <img src="images (1).jpg" alt="haircut">
+        <h2>Taper fade cut</h2>
+        <h3>this is taper fade cut have low mid and high</h3>
+        <p>
+          <span class="stmnt">the price is </span>
+          <span class="money">55€</span>
+        </p>
+        
+        
+        
+      </div>
+      <!--card2-->
+      <div class="card">
+        <img src="images.jpg" alt="haircut">
+        <h2>fade cut</h2>
+        <h3>this is fade cut for the mans have mid low and high</h3>
+       <p>
+         <span class="stmnt">the price is </span>
+         <span class="money">50€</span>
+       </p>
+        
+        
+        
+      </div>
+      <!--card3-->
+      <div class="card">
+        <img src="e48a940b9345a3c09e88698b72ef58ed.jpg" alt="haircut">
+        <h2>Mullet cut</h2>
+        <h3>This is mullet cut have low high and mid fade</h3>
+        <p>
+          <span class="stmnt">the price is </span>
+          <span class="money">70€</span>
+        </p>
+        
+        
+      </div>
+      
+      
+    </div>
+  </section>
+
+
+<br>
+
+<h2 style="text-align: center;">beard cut info</h2>
+  
+  <section>
+    <div class="card-container-row">
+      <!--Card1-->
+      <div class="card">
+        <img src="c9dd3760051dccc87208eb0e24d580cc.jpg" alt="haircut">
+        <h2>beard fade cut</h2>
+        <h3>this is taper fade cut have low mid and high</h3>
+        <p>
+          <span class="stmnt">the price is </span>
+          <span class="money">45€</span>
+        </p>
+        
+        
+        
+      </div>
+      <!--card2-->
+      <div class="card">
+        <img src="be9d87f722b734b70b8e9077df7cc657.jpg" alt="haircut">
+        <h2>mustache and goatee</h2>
+        <h3>This is a mustache goatee for adults the most.</h3>
+       <p>
+         <span class="stmnt">the price is </span>
+         <span class="money">40€</span>
+       </p>
+        
+        
+        
+      </div>
+      <!--card3-->
+      <div class="card">
+        <img src="370c2e329bcfd83b1dcacff5e9f09401.jpg" alt="haircut">
+        <h2>Full beard</h2>
+        <h3>This is a full beard for genlemans the most.</h3>
+        <p>
+          <span class="stmnt">the price is </span>
+          <span class="money">30€</span>
+        </p>
+        
+        
+      </div>
+      
+      
+    </div>
+  </section>
+<footer>
+    &copy; 2026 Classic Barber Shop. All rights reserved.
+  </footer>
+  <script>
+/* adeegyada (array + objects) */
+const services = [
+  { name: "Taper fade cut", price: 55 },
+  { name: "Fade cut", price: 50 },
+  { name: "Mullet cut", price: 70 },
+  { name: "Beard fade cut", price: 45 },
+  { name: "Mustache and goatee", price: 40 },
+  { name: "Full beard", price: 30 }
+];
+
+function initServices(){
+
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach((card, index) => {
+
+    // button samee (DOM manipulation)
+    const btn = document.createElement("button");
+    btn.innerText = "Select service";
+    btn.style.marginTop = "10px";
+
+    card.appendChild(btn);
+
+    // event handling
+    btn.addEventListener("click", function(){
+
+      selectService(index);
+
+    });
+  });
+}
+
+function selectService(i){
+
+  // input validation (magac weydii user)
+  let customer = prompt("Enter your name:");
+
+  if(customer === null || customer.trim() === ""){
+    alert("Name is required!");
+    return;
+  }
+
+  // conditional logic
+  if(services[i].price > 60){
+    alert(
+      "Hi " + customer +
+      "\nYou selected: " + services[i].name +
+      "\nPrice: " + services[i].price + "€" +
+      "\nThis is a premium service."
+    );
+  }else{
+    alert(
+      "Hi " + customer +
+      "\nYou selected: " + services[i].name +
+      "\nPrice: " + services[i].price + "€"
+    );
+  }
+}
+
+initServices();
+</script>
+
+</body>
+</html>

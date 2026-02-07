@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="istockphoto-1030255416-612x612.jpg">
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: aquamarine;
+    color: black;
+}
+header {
+    background: brown;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: gold;
+    margin: 0 15px;
+    text-decoration: none;
+}
+table {
+width: 50%;
+border-collapse: collapse;
+margin: 20px auto;
+font-family: Arial, sans-serif;
+}
+th, td {
+border: 1px solid #333;
+padding: 10px;
+text-align: center;
+}
+th {
+background-color: #f0f0f0;
+}
+.open {
+color: green;
+font-weight: bold;
+}
+.closed {
+color: red;
+font-weight: bold;
+}
+section {
+      padding: 20px;
+    }
+    .services, .hours, .contact {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    .button {
+      background: #008000;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    <header>
+    <h1>💈 Classic Barber Shop</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+<h2 style="text-align: center; color: #333;">how it works and days worked</h2>
+<h2 style="text-align: center; color: blue;">our barber work starts 9:00AM-1:00PM</h2>
+
+
+
+<section>
+    
+     <table>
+       <caption>Barber Days worked</caption>
+   <tr>
+     <th>Day</th>
+     <th>Status</th>
+   </tr>
+   <tr>
+     <td>Saturday</td>
+     <td class="open">Open</td>
+   </tr>
+   <tr>
+     <td>Sunday</td>
+     <td class="open">Open</td>
+   </tr>
+   <tr>
+     <td>Monday</td>
+     <td class="open">Open</td>
+   </tr>
+   <tr>
+     <td>Tuesday</td>
+     <td class="open">Open</td>
+   </tr>
+   <tr>
+     <td>Wednesday</td>
+     <td class="open">Open</td>
+   </tr>
+   <tr>
+     <td>Thursday</td>
+     <td class="open">open</td>
+   </tr>
+   <tr>
+     <td>Friday</td>
+     <td class="closed">Closed</td>
+   </tr>
+ </table>
+  </section>
+  <br />
+  <section class="services" id="services" style="text-align: center;">
+    <h2>💈 Our Services</h2>
+    <ul>
+      <li >Classic Haircut</li>
+      <li>Beard Trim & Shaping</li>
+      <li>Shaving & Facial Care</li>
+      <li>Kids Haircuts</li>
+      <li>Hair Styling & Designs</li>
+    </ul>
+  </section>
+
+  <section class="hours" id="hours" style="text-align: center;">
+    <h2>🕒 Opening Hours</h2>
+    <p id="todayStatus" style="text-align:center; font-weight:bold;">Saturday - Wednesday: 9:00 AM - 9:00 PM</p>
+    <p>Friday: <strong>Closed</strong></p>
+  </section>
+
+  <section class="contact" id="contact" style="text-align: center;">
+    <h2>📍 Contact & Location</h2>
+    <p>Location: kaaran & x.jajab District, Mogadishu, Somalia</p>
+    <p>Phone: +252 61 2131112</p>
+    <p>Email: classicstyylebarbershop@gmail.com</p>
+    <a href="tel:+252612345678" class="button">Call Now</a>
+    <a href="booking.html" class="button">Book Appointment</a>
+  </section>
+
+  <footer>
+    &copy; 2026 Classic Barber Shop. All rights reserved.
+  </footer>
+  <script>
+function checkTodayStatus(){
+
+    let today = new Date().getDay(); 
+    // 0=Sunday, 1=Monday, 2=Tuesday, 3=Wednesday,
+    // 4=Thursday, 5=Friday, 6=Saturday
+
+    let statusText = document.getElementById("todayStatus");
+
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+
+    let todayName = days[today];
+
+    // Friday closed, others open
+    if(todayName === "Friday"){
+        statusText.innerText = "❌ Today is " + todayName + " – We are CLOSED";
+        statusText.style.color = "red";
+    }else{
+        statusText.innerText = "✅ Today is " + todayName + " – We are OPEN";
+        statusText.style.color = "green";
+    }
+}
+
+checkTodayStatus();
+</script>
+
+</body>
+</html>

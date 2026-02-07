@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="istockphoto-1030255416-612x612.jpg">
+    <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: aquamarine;
+    color: black;
+}
+header {
+    background: brown;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: gold;
+    margin: 0 15px;
+    text-decoration: none;
+}
+ h1 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+    p {
+      color: #999;
+      margin-bottom: 30px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+    }
+    input, select, textarea {
+      width: 48%;
+      padding: 12px;
+      margin: 10px 1%;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    textarea {
+      width: 98%;
+      height: 80px;
+      resize: none;
+    }
+    button {
+      background-color: #e53935;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 18px;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: greenyellow;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    </style>
+</head>
+<body>
+    <header>
+    <h1>💈 Classic Barber Shop</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+  <h1 style="text-align: center;">Book a seat</h1>
+  <p id="result" style="text-align: center;">Please fill out the form and we get back to you</p>
+
+ <form id="bookingForm">
+
+  <input type="text" id="fullname" placeholder="Full name" required>
+  <input type="tel" id="phone" placeholder="Mobile 0025261XXXXXXX" required><br>
+  
+  <input type="time" id="time">
+  <select id="branch">
+    <option value="">Select Branches</option>
+    <option>x.jajab</option>
+    <option>kaaran</option>
+  </select><br>
+  
+  <input type="date" id="date">
+  <input type="number" id="people" placeholder="Number of People"><br>
+
+  <textarea id="comment" placeholder="Comment (Optionals)"></textarea><br>
+
+  <button type="submit">Submit</button>
+
+  <p id="result" style="text-align:center;"></p>
+
+</form>
+<br><br>
+  <footer>
+    &copy; 2026 Classic Barber Shop. All rights reserved.
+  </footer>
+
+
+  <script>
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let name   = document.getElementById("fullname").value.trim();
+    let phone  = document.getElementById("phone").value.trim();
+    let time   = document.getElementById("time").value;
+    let branch = document.getElementById("branch").value;
+    let date   = document.getElementById("date").value;
+
+    let result = document.getElementById("result");
+
+    if(name === "" || phone === "" || branch === ""){
+        alert("Fadlan buuxi magaca, phone-ka iyo branch-ka");
+        return;
+    }
+
+    alert(
+        "Booking successful!\n\n" +
+        "Name: " + name + "\n" +
+        "Date: " + date + "\n" +
+        "Time: " + time + "\n" +
+        "Branch: " + branch
+    );
+
+    result.innerText = "✅ Mahadsanid " + name + ", booking-kaaga waa la diiwaangeliyay.";
+    result.style.color = "green";
+    result.style.fontWeight = "bold";
+
+    // form-ka nadiifi
+    document.getElementById("bookingForm").reset();
+
+});
+</script>
+
+
+</body>
+</html>

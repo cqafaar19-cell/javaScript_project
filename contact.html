@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: aquamarine;
+    color: black;
+}
+header {
+    background: brown;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: gold;
+    margin: 0 15px;
+    text-decoration: none;
+}
+ footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+    <h1>💈 Classic Barber Shop</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+<h1 style="text-align: center;">Contact Us</h1>
+<section style="text-align: center;">
+<input type="text" id="name" placeholder="Full name" required><br><br>
+
+<input type="email" id="email" placeholder="Your Email" style="text-align: center;"><br><br>
+
+<input type="tel" id="phone" placeholder="Mobile 0025261XXXXXXX" required><br><br>  
+
+<textarea id="message" placeholder="Your Message" style="text-align: center;"></textarea><br>
+
+
+<button onclick="send()">Send</button>
+
+<p id="feedback"></p>
+</section>
+<footer>
+    &copy; 2026 Classic Barber Shop. All rights reserved.
+  </footer>
+<script>
+function send(){
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let msg = document.getElementById("message").value.trim();
+    let feedback = document.getElementById("feedback");
+
+    // hubi in wax walba la buuxiyay
+    if(name === "" || email === "" || phone === "" || msg === ""){
+        feedback.innerText = "❌ Fadlan buuxi dhammaan meelaha.";
+        feedback.style.color = "red";
+        return;
+    }
+
+    // ✅ hubinta email-ka (waa inuu leeyahay @ iyo .com)
+    if(!email.includes("@") || !email.endsWith(".com")){
+        feedback.innerText = "❌ Email-ka ma saxna. Tusaale: name@gmail.com";
+        feedback.style.color = "red";
+        return;
+    }
+
+    feedback.innerText = "✅ Mahadsanid " + name + ", fariintaada waa la helay.";
+    feedback.style.color = "green";
+    feedback.style.fontWeight = "bold";
+
+    // nadiifi fields-ka
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("message").value = "";
+}
+</script>
+
+
+</body>
+</html>
